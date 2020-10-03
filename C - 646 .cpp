@@ -23,6 +23,7 @@ int main() {
     while(t--){
         int n,x;
         cin >> n >> x;
+        /*
         vi d(n+1,0),p(n+1,-1), degree(n+1,0);
         pan(i,n-1){
             int a,b;
@@ -38,5 +39,22 @@ int main() {
                 else cout << "Ayush\n";
             }
         }
+        */
+        map<char, ll> mp;
+    for(ll i = 0; i < n; i++) mp[s[i]]++;
+    vector<ll> v;
+    while(1){
+        if(mp['o'] && mp['n'] && mp['e']){
+            mp['o']--, mp['n']--, mp['e']--;
+            v.push_back(1);
+        } else  break;
+    }
+    while(1){
+        if(mp['z'] && mp['e'] && mp['r'] && mp['o']){
+            mp['z']--, mp['e']--, mp['r']--, mp['o']--;
+            v.push_back(0);
+        } else  break;
+    }
+    for(auto &i: v) cout << i << " ";
     }
 }
