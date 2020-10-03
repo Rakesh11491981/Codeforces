@@ -18,6 +18,17 @@ int main() {
     ll n;
     cin >> n;
     ll v[n+4], suf[n+4], g[n+4];
+    for(ll i = 0; i < 26; i++) mp[i] = 999999999999;
+    for(ll i = n-1; i >= 0; i--) mp[s[i] - 'a'] = i;
+    //for(ll i = 0; i < 26; i++) cout << i << " " << mp[i] << endl;
+    for(ll i = 0; i < n; i++) {
+        ll flag = 0;
+        for(ll j = 0; j < (s[i] - 'a'); j++) if(mp[j] < i){
+            flag = 10;
+            cout << "Ann" << endl; break;
+        }
+        if(!flag) cout << "Mike" << endl;
+    }
     pans(i,n+1,1)
         cin >> v[i];
     suf[n] = v[n];
