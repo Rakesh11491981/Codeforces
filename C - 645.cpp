@@ -21,7 +21,13 @@ int main() {
     cin>>t;
     while(t--){
         ll x1, x2, y1, y2;
-        cin >> x1 >> y1 >> x2 >> y2;
+//         cin >> x1 >> y1 >> x2 >> y2;
+        ll m = 0, po = 0;
+    for(auto &i: mp) if(i.second > m) m = i.second, po = i.first;
+    vector<ll> v; 
+    for(ll i = 0; i < n; i++) {
+        if(p[i]!=po) v.push_back(a[i]);
+    }
         ll res = (x2 - x1)*(y2 - y1) + 1;
         cout << res << endl;
     }
