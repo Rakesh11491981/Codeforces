@@ -15,7 +15,7 @@ using namespace std;
 #define pii pair<int,int>
 ll gcd(ll a, ll b) { return a % b == 0 ? b : gcd(b, a % b); }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
-
+#edit changes
 
 int main() {
     int t;
