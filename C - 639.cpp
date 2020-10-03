@@ -24,17 +24,26 @@ int main() {
         cin >> n;
         vi rooms(n, 0);
         vl v(n);
+        /*
         pan(i,n)
             cin >> v[i];
         pan(i,n)
             rooms[ (i + (v[i] % n) + n) % n]++;
         bool res = true;
+        */
         pan(i,n){
             if(rooms[i] == 0 || rooms[i] > 1){
                 res = false;
                 break;
             }
         }
+        
+    for(ll i = 0; i < n; i++)
+        for(ll j = 0; j < n; j++) cin >> a[i][j];
+    for(ll i = 0; i < n; i++){
+        r[i] = sqrt(a[i][(n+i-1)%n]*a[i][(i+1)%n]/a[(n+i-1)%n][(i+1)%n]);
+    }
+    for(ll i = 0; i < n; i++) cout << r[i] << " ";
         if(res)
             cout << "YES\n";
         else
